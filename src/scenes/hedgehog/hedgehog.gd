@@ -11,6 +11,7 @@ var move_speed = 400
 var velocity = Vector2()
 
 onready var sprite = $Sprite
+onready var animation_player = $AnimationPlayer
 
 func _physics_process(delta):
 	# Apply gravity
