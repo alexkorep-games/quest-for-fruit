@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/island/island_small.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/hedgehog/hedgehog.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/main/main.gd" type="Script" id=3]
+[ext_resource path="res://scenes/island/island_two_trees.tscn" type="PackedScene" id=4]
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Islands" type="Node2D" parent="."]
+
+[node name="Island" parent="Islands" instance=ExtResource( 1 )]
+position = Vector2( 288, 211 )
+
+[node name="Island2" parent="Islands" instance=ExtResource( 1 )]
+position = Vector2( 142, 115 )
+
+[node name="Island3" parent="Islands" instance=ExtResource( 1 )]
+position = Vector2( 80, 417 )
+
+[node name="Island4" parent="Islands" instance=ExtResource( 1 )]
+position = Vector2( 185, 329 )
+
+[node name="Island5" parent="Islands" instance=ExtResource( 4 )]
+position = Vector2( 239, 573 )
+
+[node name="Hedgehog" parent="." instance=ExtResource( 2 )]
+position = Vector2( 266, 492 )
+
+[connection signal="left_screen" from="Hedgehog" to="." method="_on_Hedgehog_left_screen"]
