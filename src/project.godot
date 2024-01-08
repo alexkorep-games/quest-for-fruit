@@ -20,7 +20,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Skybound Quest"
+config/name="Quest for Fruit"
 run/main_scene="res://scenes/main/main.tscn"
 config/icon="res://icon.png"
 
