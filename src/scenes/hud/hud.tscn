@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/sprites/forest01.png" type="Texture" id=1]
+[ext_resource path="res://scenes/hud/hud.gd" type="Script" id=2]
+
+[node name="HUD" type="Control"]
+anchor_right = 1.0
+rect_min_size = Vector2( 0, 32 )
+mouse_filter = 2
+script = ExtResource( 2 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -8.0
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
+margin_right = 344.0
+margin_bottom = 32.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer"]
+margin_left = 146.0
+margin_right = 198.0
+margin_bottom = 32.0
+
+[node name="ApplesLabel" type="Label" parent="MarginContainer/CenterContainer/HBoxContainer"]
+unique_name_in_owner = true
+margin_top = 9.0
+margin_right = 16.0
+margin_bottom = 23.0
+text = "32"
+
+[node name="AppleImagePlaceholder" type="Control" parent="MarginContainer/CenterContainer/HBoxContainer"]
+margin_left = 20.0
+margin_right = 52.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/CenterContainer/HBoxContainer/AppleImagePlaceholder"]
+position = Vector2( 16, 16 )
+scale = Vector2( 0.65, 0.572233 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 12.02, 74.012, 40.145, 47 )
