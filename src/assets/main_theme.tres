@@ -1,0 +1,14 @@
+[gd_resource type="Theme" load_steps=4 format=2]
+
+[ext_resource path="res://yellow_button_styleboxtexture.tres" type="StyleBox" id=1]
+[ext_resource path="res://assets/fonts/apple-ii-screen-typeface-font/AppleIiScreenTypeface-2aP3.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
+
+[resource]
+Button/colors/font_color = Color( 0, 0, 0, 1 )
+Button/fonts/font = SubResource( 2 )
+Button/styles/hover = ExtResource( 1 )
+Button/styles/normal = ExtResource( 1 )
+Button/styles/pressed = ExtResource( 1 )
