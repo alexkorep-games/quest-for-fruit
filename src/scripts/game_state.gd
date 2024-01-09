@@ -7,3 +7,6 @@ func collect_apple():
 
 func get_apples():
     return apples
+
+func reset_level():
+    apples = 0

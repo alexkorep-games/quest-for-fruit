@@ -1,5 +1,6 @@
-extends Area2D
+extends Node2D
 
+signal teleported
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -8,7 +9,7 @@ extends Area2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$AnimationPlayer.play("Rotate")
+	get_node("%AnimationPlayer").play("Rotate")
 
 
 func _on_Area2D_body_entered(body):
@@ -26,4 +27,4 @@ func _on_Area2D_body_entered(body):
 	tween.connect("tween_all_completed", self, "_on_Tween_tween_all_completed")
 
 func _on_Tween_tween_all_completed():
-	get_tree().change_scene("res://scenes/start_screen/start_screen.tscn")
+	emit_signal("teleported")

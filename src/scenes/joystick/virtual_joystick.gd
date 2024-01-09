@@ -141,11 +141,13 @@ func _update_input_actions():
 	elif Input.is_action_pressed(action_right):
 		Input.action_release(action_right)
 	if _output.y < 0:
-		Input.action_press(action_up, -_output.y)
+		if abs(_output.y) > deadzone_size/clampzone_size:
+			Input.action_press(action_up, -_output.y)
 	elif Input.is_action_pressed(action_up):
 		Input.action_release(action_up)
 	if _output.y > 0:
-		Input.action_press(action_down, _output.y)
+		if abs(_output.y) > deadzone_size/clampzone_size:
+			Input.action_press(action_down, _output.y)
 	elif Input.is_action_pressed(action_down):
 		Input.action_release(action_down)
 
